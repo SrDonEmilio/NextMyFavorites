@@ -1,6 +1,6 @@
 import React from 'react';
 
-import themoviedb from '../../img/themoviedb.svg'
+import themoviedb from '../img/themoviedb.svg'
 
 const Footer = () => {
     return (
