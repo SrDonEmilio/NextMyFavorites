@@ -22,14 +22,12 @@ class List extends React.Component {
         error.message;
       });
     const resJSON = await res.json();
-    console.log(resJSON)
     this.setState({ data: resJSON.items, loading: false });
   }
-
   render() {
     const { data, loading } = this.state;
     if(loading){
-        return <h3 className="text-light">Loading...</h3>
+        return <h3 id="loading-text">Loading...</h3>
     }
     return (
       <div className="container">

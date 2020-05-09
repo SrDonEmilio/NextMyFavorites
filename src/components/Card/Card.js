@@ -33,6 +33,7 @@ const Card = ({ movie }) => {
     </div>
   );
 };
+
 Card.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string,
