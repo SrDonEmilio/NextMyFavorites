@@ -1,17 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import List from './containers/List'
+import React from "react";
+import ReactDOM from "react-dom";
+import List from "./containers/List";
 
-import 'bootswatch/dist/lux/bootstrap.min.css'
+// import "bootswatch/dist/lux/bootstrap.min.css";
 
 const App = () => {
-    return (
-        <main className="bg-dark">
-            <div className="container">
-                <List />
-            </div>
-        </main>
-    )
-}
+  return (
+    <main>
+        <List />
+    </main>
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"));

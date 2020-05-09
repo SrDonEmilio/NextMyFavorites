@@ -1,33 +1,44 @@
-import React from 'react'
-import Card from '../components/Card/Card'
+import React from "react";
+import Card from "../components/Card/Card";
 
 class List extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+      loading: true,
+    };
+  }
 
-    constructor(){
-        super()
-        this.state = {
-            data : []
-        }
-    }
+  async componentDidMount() {
+    let API = process.env.API
+    const res = await fetch(`${API}`, {
+      method: "GET",
+    })
+      .then(function (response) {
+        return response;
+      })
+      .catch(function (error) {
+        error.message;
+      });
+    const resJSON = await res.json();
+    console.log(resJSON)
+    this.setState({ data: resJSON.items, loading: false });
+  }
 
-    async componentDidMount(){
-        const res = await fetch(`${API}&s=robot`)
-        const resJSON = await res.json()
-        console.log(resJSON.Search)
-        this.setState({data: resJSON.Search})
+  render() {
+    const { data, loading } = this.state;
+    if(loading){
+        return <h3 className="text-light">Loading...</h3>
     }
-
-    render(){
-        return (
-            <div className="row">
-                {
-                    this.state.data.map(movie => {
-                        return <Card movie={movie} key={movie.imdbID}/>
-                    })
-                }
-            </div>
-        )
-    }
+    return (
+      <div className="container">
+        {data.map((movie) => {
+          return <Card movie={movie} key={movie.id} />;
+        })}
+      </div>
+    );
+  }
 }
 
-export default List
+export default List;
