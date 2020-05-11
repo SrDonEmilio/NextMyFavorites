@@ -12,7 +12,7 @@ const App = () => {
   return (
     <main>
         <Header />
-        <List />
+        <List/>
         <Footer />
     </main>
   );
