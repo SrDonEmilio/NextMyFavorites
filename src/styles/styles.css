@@ -22,3 +22,23 @@
     font-size: 40px;
     color: #fff;
 }
+#menu-header {
+    position: relative;
+    margin: 20px auto;
+    width: max-content;
+}
+
+#menu-header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 100px;
+}
+
+@media screen and (max-width: 769px){
+    #logo-header {
+        width: 100%;
+    }
+}

@@ -75,7 +75,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-  typeContent: PropTypes.shape(PropTypes.string),
+  typeContent: PropTypes.string
 };
 
 List.defaultProps = {
