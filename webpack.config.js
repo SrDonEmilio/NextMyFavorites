@@ -61,4 +61,8 @@ module.exports = {
     ],
   },
   plugins: [htmlPlugin, new DotEnv()],
+  devServer: {
+    port: 3000,
+    historyApiFallback: true
+  }  
 };
