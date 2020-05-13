@@ -39,11 +39,11 @@ class List extends React.Component {
         error.message;
       });
 
-    /* if (_platform !== "books") {
+    /* if (_platform !== "books") { */
       const resJSON = await res.json();
       this.setState({ data: resJSON.items, loading: false });
-    } else {
-      console.log('here')
+    /*} else { 
+      // console.log('here')
       const resXML = await res.text();
       xml2js.parseString(resXML, (err, results) => {
         if (err) {
