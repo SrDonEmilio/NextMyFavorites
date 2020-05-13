@@ -21,9 +21,10 @@ class List extends React.Component {
       case "tv":
         _platform = process.env.tv;
         break
-      case "books":
+      /*case "books":
         _platform = process.env.books
         break
+        */
       default:
         break;
     }
@@ -38,7 +39,7 @@ class List extends React.Component {
         error.message;
       });
 
-    if (_platform !== "books") {
+    /* if (_platform !== "books") {
       const resJSON = await res.json();
       this.setState({ data: resJSON.items, loading: false });
     } else {
@@ -55,7 +56,7 @@ class List extends React.Component {
         // log JSON string
         console.log(json);
       });
-    }
+    } */
   }
 
   render() {
