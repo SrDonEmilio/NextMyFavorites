@@ -66,6 +66,10 @@ body{
 
 .container .card .face.face1 .content img{
     max-width: 100px;
+    transition: 0.5s;
+}
+.card:hover img.card-img-top {
+    transform: scale(1.5) translateY(-25px);
 }
 
 .container .card .face.face1 .content h3{

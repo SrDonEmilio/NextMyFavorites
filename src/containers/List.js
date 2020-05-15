@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "../components/Card/Card";
-import xml2js from "xml-js";
+//import xml2js from "xml-js";
 
 class List extends React.Component {
   constructor(props) {
