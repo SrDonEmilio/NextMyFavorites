@@ -21,27 +21,11 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          "file-loader",
           {
-            loader: "image-webpack-loader",
+            loader: "file-loader",
             options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.9],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75,
-              },
+              regExp: /\/([a-z0-9]+)\/[a-z0-9]+\.png$/i,
+              name: "[1]-[name].[ext]",
             },
           },
         ],
@@ -50,19 +34,18 @@ module.exports = {
         test: /\.(woff|woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
+              name: '/public/icons/[name].[ext]'
             }
-          }
-        ]
-      }
+          },
+        ],
+      },
     ],
   },
   plugins: [htmlPlugin, new DotEnv()],
   devServer: {
     port: 3000,
-    historyApiFallback: true
-  }  
+    historyApiFallback: true,
+  },
 };
